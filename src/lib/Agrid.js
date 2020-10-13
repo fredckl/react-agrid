@@ -1,5 +1,5 @@
 import React from 'react';
-import { splitEvery, propOr, ifElse, pathOr, is, hasPath, isNil } from 'rambda';
+import { splitEvery, propOr, ifElse, pathOr, is, hasPath, isNil, always } from 'rambda';
 import propTypes from 'prop-types';
 import { splitBy } from './util/split';
 import { Div } from './components';
@@ -39,15 +39,13 @@ const Agrid = ({
 
   const getColProps = (rowIndex, colIndex) => {
     if (isNil(colsByRow)) {
-      console.log('COL', propOr({}, colIndex, colProps));
       const size = propOr({}, colIndex, colProps);
       return is(Array, size) ? {} : size;
     } else {
-      console.log('ROW', pathOr({}, [rowIndex, colIndex])(colProps));
       return ifElse(
         hasPath([rowIndex, colIndex]),
         pathOr({}, [rowIndex, colIndex]),
-        propOr({}, rowIndex)
+        always({})
       )(colProps);
     }
   };
