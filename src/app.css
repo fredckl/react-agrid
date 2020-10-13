@@ -1,0 +1,13 @@
+.row {
+  width: 100%;
+  display: flex;
+}
+
+.col {
+  width: auto;
+}
+
+.col-first {
+  width: 100%;
+  flex-basis: 100%;
+}

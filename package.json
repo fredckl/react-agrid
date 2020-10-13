@@ -1,0 +1,99 @@
+{
+  "name": "react-agrid",
+  "version": "0.0.0",
+  "private": false,
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "files": [
+    "dist/*"
+  ],
+  "peerDependencies": {
+    "rambda": "^6.1.0",
+    "react": "^16.8.0"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.10.4",
+    "@changesets/cli": "^2.10.2",
+    "@jest/globals": "^26.4.2",
+    "@rollup/plugin-commonjs": "^15.0.0",
+    "@rollup/plugin-image": "^2.0.5",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/react-hooks": "^3.4.1",
+    "@testing-library/user-event": "^7.1.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.3",
+    "react-test-renderer": "^16.13.1",
+    "rollup": "^2.26.10",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-jsx": "^1.0.3",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-peer-deps-external": "^2.2.3",
+    "rollup-plugin-terser": "^6.1.0",
+    "rollup-plugin-visualizer": "^4.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest --watch",
+    "eject": "react-scripts eject",
+    "build:dist": "rollup -c rollup.config.js",
+    "new-version": "changeset && changeset version",
+    "release": "yarn build:dist && changeset publish",
+    "push": "git push --follow-tags"
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "rules": {
+      "react/prop-types": [
+        2,
+        {
+          "ignore": [
+            "className",
+            "children"
+          ]
+        }
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "comma-style": [
+        2,
+        "last"
+      ],
+      "semi": [
+        2
+      ]
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "description": "react rollup biolerplate",
+  "dependencies": {
+    "rambda": "^6.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fredckl/react-cut-input.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fredckl/react-cut-input/issues"
+  }
+}
