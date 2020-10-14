@@ -1,9 +1,12 @@
 import React from 'react';
 import { splitEvery, propOr, ifElse, pathOr, is, hasPath, isNil, always } from 'rambda';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { splitBy } from './util/split';
 import { Div } from './components';
 
+/**
+ * Primary UI component for user interaction
+ */
 const Agrid = ({
   children,
   colsByRow,
@@ -31,8 +34,6 @@ const Agrid = ({
     // Chunk by row [[{}, {}, {}], [{}, {}]]
     rowChildren = splitEvery(colsByRow || children.length, children);
   }
-  row = row || Div;
-  col = col || Div;
 
   if (is(Function, row)) row = row({});
   if (is(Function, col)) col = col({});
@@ -78,19 +79,41 @@ const Agrid = ({
   });
 };
 
+
+Agrid.propTypes = {
+  /**
+   * Custom Row Component
+   */
+  row: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
+  /**
+   * Custom row props
+   */
+  rowProps: PropTypes.object,
+  /**
+   * Custom Col Component
+   */
+  col: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
+  /**
+   * Custom default col props
+   */
+  defaultColProps: PropTypes.object,
+  /**
+   * 
+   */
+  colProps: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object, PropTypes.array])),
+  /**
+   * 
+   */
+  colsByRow: PropTypes.oneOfType([PropTypes.number, PropTypes.arrayOf(PropTypes.number)])
+};
+
 Agrid.defaultProps = {
+  row: Div,
+  col: Div,
   rowProps: {},
   defaultColProps: {},
   colProps: []
 };
 
-Agrid.propTypes = {
-  row: propTypes.oneOfType([propTypes.object, propTypes.func]),
-  rowProps: propTypes.object,
-  col: propTypes.oneOfType([propTypes.object, propTypes.func]),
-  defaultColProps: propTypes.object,
-  colProps: propTypes.arrayOf(propTypes.oneOfType([propTypes.object, propTypes.array])),
-  colsByRow: propTypes.oneOfType([propTypes.number, propTypes.arrayOf(propTypes.number)])
-};
 
 export default Agrid;

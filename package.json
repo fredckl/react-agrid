@@ -12,19 +12,27 @@
     "react": "^16.8.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.11.6",
     "@babel/preset-react": "^7.10.4",
     "@changesets/cli": "^2.10.2",
     "@jest/globals": "^26.4.2",
     "@rollup/plugin-commonjs": "^15.0.0",
     "@rollup/plugin-image": "^2.0.5",
     "@rollup/plugin-node-resolve": "^9.0.0",
+    "@storybook/addon-actions": "^6.0.26",
+    "@storybook/addon-essentials": "^6.0.26",
+    "@storybook/addon-links": "^6.0.26",
+    "@storybook/react": "^6.0.26",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/react-hooks": "^3.4.1",
     "@testing-library/user-event": "^7.1.2",
+    "babel-loader": "^8.1.0",
+    "chromatic": "^5.2.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-is": "^16.13.1",
     "react-scripts": "3.4.3",
     "react-test-renderer": "^16.13.1",
     "rollup": "^2.26.10",
@@ -44,7 +52,9 @@
     "build:dist": "rollup -c rollup.config.js",
     "new-version": "changeset && changeset version",
     "release": "yarn build:dist && changeset publish",
-    "push": "git push --follow-tags"
+    "push": "git push --follow-tags",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": "react-app",

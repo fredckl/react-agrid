@@ -1,11 +1,10 @@
 import React from 'react';
 
-const Col = ({ children }) => {
-  return (
-    <div className="col">
-      {children}
-    </div>
-  );
-};
+const Col = ({ children }) => (
+  <div className="col">
+    {children}
+  </div>
+);
+
 
 export default Col;

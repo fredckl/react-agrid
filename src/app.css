@@ -1,6 +1,7 @@
 .row {
   width: 100%;
   display: flex;
+  justify-content: space-between;
 }
 
 .col {
@@ -10,4 +11,12 @@
 .col-first {
   width: 100%;
   flex-basis: 100%;
+}
+
+.col-full-width {
+  width: 100%;
+  flex-basis: 100%;
+}
+.text-center {
+  text-align: center;
 }
