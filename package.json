@@ -76,7 +76,9 @@
         2,
         "last"
       ],
-      "semi": [2]
+      "semi": [
+        2
+      ]
     }
   },
   "browserslist": {
@@ -91,7 +93,7 @@
       "last 1 safari version"
     ]
   },
-  "description": "react rollup biolerplate",
+  "description": "react agrid is a help to quickly build a grid",
   "dependencies": {
     "rambda": "^6.2.0"
   },
