@@ -1,5 +1,11 @@
 # react-cut-input
 
+## 0.1.1
+
+### Patch Changes
+
+- Update doc
+
 ## 0.1.0
 
 ### Minor Changes
