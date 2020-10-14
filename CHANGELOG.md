@@ -1,5 +1,11 @@
 # react-cut-input
 
+## 0.1.0
+
+### Minor Changes
+
+- Agrid component
+
 ## 0.2.0
 
 ### Minor Changes
