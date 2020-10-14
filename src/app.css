@@ -2,10 +2,26 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: #f2f2f2;
 }
 
 .col {
   width: auto;
+  flex: 1;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #c2c2c2;
+  margin-right: 10px;
+  margin-left: 10px;
+  text-align: center;
+}
+.row > .col:first-child {
+  margin-left: 0;
+}
+.row > .col:last-child {
+  margin-right: 0;
 }
 
 .col-first {
@@ -19,4 +35,8 @@
 }
 .text-center {
   text-align: center;
+}
+p {
+  margin: 0 !important;
+  padding: 0 !important;
 }

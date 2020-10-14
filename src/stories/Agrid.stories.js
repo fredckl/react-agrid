@@ -4,7 +4,7 @@ import { Row, Col } from '../components';
 import '../app.css';
 
 export default {
-  title: 'Agrid',
+  title: 'Example/Agrid',
   component: Agrid,
   args: {
     row: 'Component',
@@ -21,11 +21,11 @@ export const Simple = args => (
     col={<Col/>}
     colsByRow={2}
   >
-    <p>1</p>
-    <p>2</p>
-    <p>3</p>
-    <p>4</p>
-    <p>5</p>
+    <p>Col 1</p>
+    <p>Col 2</p>
+    <p>Col 3</p>
+    <p>Col 4</p>
+    <p>Col 5</p>
     </Agrid>
 );
 Simple.args = {
@@ -38,11 +38,11 @@ export const MultipleRows = args => (
     col={<Col/>}
     colsByRow={[1, 3, 1]}
   >
-    <p>1</p>
-    <p>2</p>
-    <p>3</p>
-    <p>4</p>
-    <p>5</p>
+    <p>Col 1</p>
+    <p>Col 2</p>
+    <p>Col 3</p>
+    <p>Col 4</p>
+    <p>Col 5</p>
     </Agrid>
 );
 
@@ -52,12 +52,12 @@ export const SpecificCol = args => (
     col={<Col/>}
     colsByRow={[1, 3, 1]}
   >
-    <p>1</p>
-    <p>2</p>
-    <p>3</p>
-    <p>4</p>
+    <p>Col 1</p>
+    <p>Col 2</p>
+    <p>Col 3</p>
+    <p>Col 4</p>
     <Col className="col-full-width text-center">
-      <p>5</p>
+      <p>Col 5</p>
     </Col>
     </Agrid>
 );
