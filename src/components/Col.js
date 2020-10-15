@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Col = ({ children }) =>  { return (
-  <div className="col">
+const Col = ({ children, className }) =>  { return (
+  <div className={className || 'col'}>
     {children}
   </div>
 );};

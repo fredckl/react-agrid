@@ -26,11 +26,11 @@ function App() {
         ]}
       >
         <p>Column 1</p>
-        {/* <p>Column 2</p>
+        <p>Column 2</p>
         <p>Column 3</p>
         <p>Column 4</p>
         <p>Column 5</p>
-        <p>Column 6</p> */}
+        <p>Column 6</p>
         <Col className="col col-last text-right">
           <p>Column 7</p>
         </Col>
