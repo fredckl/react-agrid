@@ -26,7 +26,7 @@ export const Simple = args => (
     <p>Col 3</p>
     <p>Col 4</p>
     <p>Col 5</p>
-    </Agrid>
+  </Agrid>
 );
 Simple.args = {
   colsByRow: 2
@@ -43,7 +43,7 @@ export const MultipleRows = args => (
     <p>Col 3</p>
     <p>Col 4</p>
     <p>Col 5</p>
-    </Agrid>
+  </Agrid>
 );
 
 export const SpecificCol = args => (
@@ -56,10 +56,10 @@ export const SpecificCol = args => (
     <p>Col 2</p>
     <p>Col 3</p>
     <p>Col 4</p>
-    <Col className="col-full-width text-center">
+    <Col className="col text-right">
       <p>Col 5</p>
     </Col>
-    </Agrid>
+  </Agrid>
 );
 
 

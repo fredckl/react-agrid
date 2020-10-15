@@ -37,6 +37,9 @@
 .text-center {
   text-align: center;
 }
+.text-right {
+  text-align: right;
+}
 p {
   margin: 0 !important;
   padding: 0 !important;
