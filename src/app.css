@@ -17,6 +17,8 @@
   margin-right: 10px;
   margin-left: 10px;
   text-align: center;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 .row > .col:first-child {
   margin-left: 0;
@@ -28,6 +30,7 @@
 .col-first {
   width: 100%;
   flex-basis: 100%;
+  background-color: red;
 }
 
 .col-full-width {
@@ -43,4 +46,16 @@
 p {
   margin: 0 !important;
   padding: 0 !important;
+}
+
+.bg-skyblue {
+  background-color: skyblue;
+}
+
+.bg-yellow {
+  background-color: yellow;
+}
+
+.bg-goldenrod {
+  background-color: goldenrod;
 }

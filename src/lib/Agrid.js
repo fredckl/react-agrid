@@ -1,5 +1,14 @@
 import React from 'react';
-import { splitEvery, propOr, ifElse, pathOr, is, hasPath, isNil, always } from 'rambda';
+import {
+  splitEvery,
+  propOr,
+  ifElse,
+  pathOr,
+  is,
+  hasPath,
+  isNil,
+  always
+} from 'rambda';
 import PropTypes from 'prop-types';
 import { splitBy } from './util/split';
 import { Div } from './components';
@@ -42,10 +51,6 @@ const Agrid = ({
     // Chunk by row [[{}, {}, {}], [{}, {}]]
     rowChildren = splitEvery(colsByRow || children.length, children);
   }
-  console.log('Col', col);
-  // if (is(Function, row)) row = row({});
-  // if (is(Function, col)) col = col({});
-  console.log('Col.type', col.type);
   const getColProps = (rowIndex, colIndex) => {
     if (isNil(colsByRow)) {
       const size = propOr({}, colIndex, colProps);
@@ -58,32 +63,13 @@ const Agrid = ({
       )(colProps);
     }
   };
-  // console.log(rowChildren);
-  // const x = React.Children.map(rowChildren[0][1].props.children, v => console.log(v));
-  // console.log(x);
-  // return null;
-
-  console.log('is valid col element', React.isValidElement(col.type));
-  console.log('is valid row element', React.isValidElement(row));
-
-  return rowChildren.map((_children, rowIndex) => {
-    const colChildren = _children.map((_child, colIndex) => {
-      console.log('Child', _child, _child.type === col.type);
-      return _child;
-    });
-    console.log('Children', _children);
-    return _children;
-  });
   
   return rowChildren.map((_children, rowIndex) => {
     const rowKey = `agr.${rowIndex}`;
     const colChildren = React.Children.map(_children, (_child, colIndex) => {
       const colKey = `agc.${colIndex}`;
-
-      console.log('cooooooollllll', _child.type, _child.type === col.type);
       if (_child.type === col.type || _child.type === col) {
-        console.log('Is function', is(Function, _child));
-        return is(Function, _child) ? _child({key: colKey}) : React.cloneElement(_child, { key: colKey });
+        return React.cloneElement(_child, { key: colKey });
       } else {
         return React.cloneElement(col, {
           ...defaultColProps,
@@ -93,8 +79,6 @@ const Agrid = ({
         });
       }
     });
-
-    console.log(colChildren);
     
     return React.cloneElement(row, {
       ...rowProps,
