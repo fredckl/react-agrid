@@ -63,27 +63,25 @@ const Agrid = ({
   // console.log(x);
   // return null;
 
-  console.log('is valid col element', React.isValidElement(col.type));
+  console.log('is valid col element', React.isValidElement(col));
   console.log('is valid row element', React.isValidElement(row));
 
-  return rowChildren.map((_children, rowIndex) => {
-    const colChildren = _children.map((_child, colIndex) => {
-      console.log('Child', _child, _child.type === col.type);
-      return _child;
-    });
-    console.log('Children', _children);
-    return _children;
-  });
+  // return rowChildren.map((_children, rowIndex) => {
+  //   const colChildren = _children.map((_child, colIndex) => {
+  //     console.log('Child', _child, _child.type === col.type);
+  //     return _child;
+  //   });
+  //   console.log('Children', _children);
+  //   return _children;
+  // });
   
   return rowChildren.map((_children, rowIndex) => {
     const rowKey = `agr.${rowIndex}`;
     const colChildren = React.Children.map(_children, (_child, colIndex) => {
       const colKey = `agc.${colIndex}`;
-
-      console.log('cooooooollllll', _child.type, _child.type === col.type);
       if (_child.type === col.type || _child.type === col) {
-        console.log('Is function', is(Function, _child));
-        return is(Function, _child) ? _child({key: colKey}) : React.cloneElement(_child, { key: colKey });
+        console.log('is col component', is(Function, _child), _child);
+        return is(Function, _child) ? _child({key: colKey}) : React.cloneElement(_child, { key: colKey, ..._child.props }, _child.props.children);
       } else {
         return React.cloneElement(col, {
           ...defaultColProps,
