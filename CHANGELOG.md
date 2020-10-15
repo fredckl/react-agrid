@@ -1,5 +1,11 @@
 # react-cut-input
 
+## 0.2.0
+
+### Minor Changes
+
+- Added custom column
+
 ## 0.1.1
 
 ### Patch Changes

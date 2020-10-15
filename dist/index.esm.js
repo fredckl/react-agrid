@@ -1206,6 +1206,14 @@ var Agrid = function Agrid(_ref) {
       colProps = _ref.colProps;
   if (!children) return null;
 
+  if (! /*#__PURE__*/React.isValidElement(row)) {
+    throw new Error('Invalid Row Component');
+  }
+
+  if (! /*#__PURE__*/React.isValidElement(col)) {
+    throw new Error('Invalid Col Component');
+  }
+
   if (!is(Array, children)) {
     // Check if is a fragment
     if (children.type === React.Fragment) {
@@ -1224,9 +1232,6 @@ var Agrid = function Agrid(_ref) {
     rowChildren = splitEvery(colsByRow || children.length, children);
   }
 
-  if (is(Function, row)) row = row({});
-  if (is(Function, col)) col = col({});
-
   var getColProps = function getColProps(rowIndex, colIndex) {
     if (isNil(colsByRow)) {
       var size = propOr({}, colIndex, colProps);
@@ -1241,10 +1246,9 @@ var Agrid = function Agrid(_ref) {
     var colChildren = React.Children.map(_children, function (_child, colIndex) {
       var colKey = "agc.".concat(colIndex);
 
-      if (_child.type === col) {
-        return /*#__PURE__*/React.cloneElement(col, {
-          key: colKey,
-          children: _child
+      if (_child.type === col.type || _child.type === col) {
+        return /*#__PURE__*/React.cloneElement(_child, {
+          key: colKey
         });
       } else {
         return /*#__PURE__*/React.cloneElement(col, _objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, defaultColProps), _child.props), getColProps(rowIndex, colIndex)), {}, {
@@ -1291,8 +1295,8 @@ Agrid.propTypes = {
   colsByRow: propTypes.oneOfType([propTypes.number, propTypes.arrayOf(propTypes.number)])
 };
 Agrid.defaultProps = {
-  row: Div,
-  col: Div,
+  row: /*#__PURE__*/React.createElement(Div, null),
+  col: /*#__PURE__*/React.createElement(Div, null),
   rowProps: {},
   defaultColProps: {},
   colProps: []
