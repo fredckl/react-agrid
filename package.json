@@ -1,5 +1,5 @@
 {
-  "name": "react-agrid",
+  "name": "@iamfk/react-agrid",
   "version": "0.2.1",
   "private": false,
   "main": "dist/index.cjs.js",
@@ -76,7 +76,9 @@
         2,
         "last"
       ],
-      "semi": [2]
+      "semi": [
+        2
+      ]
     }
   },
   "browserslist": {
@@ -97,11 +99,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fredckl/react-cut-input.git"
+    "url": "git+https://github.com/fredckl/react-agrid.git"
   },
-  "author": "",
+  "author": "fredckl",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/fredckl/react-cut-input/issues"
-  }
+    "url": "https://github.com/fredckl/react-agrid/issues"
+  },
+  "keywords": [
+    "react",
+    "grid",
+    "without",
+    "UI"
+  ]
 }
