@@ -1,5 +1,11 @@
 # react-cut-input
 
+## 0.2.2
+
+### Patch Changes
+
+- Change org
+
 ## 0.2.1
 
 ### Patch Changes
